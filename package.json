@@ -1,0 +1,30 @@
+{
+  "name": "rabbitmq-producer-sample",
+  "version": "0.0.1",
+  "description": "Um app simples que produz uma mensagem e encaminha atraves do Rabbit",
+  "main": "send.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node send.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanNasc/RabbitMQ.git"
+  },
+  "keywords": [
+    "rabbitmq",
+    "node.js",
+    "amqp",
+    "queue"
+  ],
+  "author": "jnasc.co",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanNasc/RabbitMQ/issues"
+  },
+  "homepage": "https://github.com/JonathanNasc/RabbitMQ#readme",
+  "dependencies": {
+    "amqplib": "^0.4.0",
+    "requirejs": "^2.1.22"
+  }
+}
