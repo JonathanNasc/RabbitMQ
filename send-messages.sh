@@ -1,0 +1,6 @@
+node send.js "mensagem A"
+node send.js "mensagem B"
+node send.js "mensagem C"
+node send.js "mensagem D"
+node send.js "mensagem E"
+node send.js "mensagem F"

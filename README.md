@@ -15,6 +15,14 @@ O primeiro arquivo envia uma mensagem por vez e o segundo exibe todas as mensage
 - No primeiro terminal rode ```node send.js "mensagem teste" ```
 - Em um segundo terminal ```node receive.js```
 
+## Testando multiplos receptores
+
+- No primeiro terminal rode ```node receive.js```
+- No segundo terminal rode ```node receive.js```
+- No terceiro terminal rode ```./send-messages.sh```
+
+As mensagens serão distribuídas entre os receptores
+
 ##Exemplo de API
 
 Publisher
@@ -31,7 +39,7 @@ amqp.connect('amqp://localhost', function(err, conn) {
  	
 	 	// #3 Declaramos uma fila que identificará a mensagem
 		var queue = 'helloword_queue';
-	    ch.assertQueue(queue, {durable: true});
+	    ch.assertQueue(queue, {durable: false});
 	    ch.sendToQueue(queue, new Buffer("hello World"));//parâmetro opcional: {persistent: true}
 	    console.log("[OK] mensagem enviada");
 
@@ -63,7 +71,7 @@ amqp.connect('amqp://localhost', function(err, conn) {
 	    // #4 Aguardamos a mensagem
 		ch.consume(queue, function(msg) {
 	  		console.log("Mensagem recebida: %s", msg.content.toString());
-	  	}, {noAck: true});
+	  	}, {noAck: true});//habilita/desabilita Message acknowledgment
 	});
 });
 
